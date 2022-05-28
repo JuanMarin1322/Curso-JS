@@ -31,7 +31,10 @@ class Persona {
 
     miFrase(){
 
-        console.log(`${ this.codigo }  dice : ${ this.frase}`)
+        this.quienSoy();
+        console.log(`${ this.codigo }  dice : ${ this.frase}`);
+
+        
     }
 }
 
