@@ -9,6 +9,7 @@ class Persona {
     nombre = '';
     codigo = '';
     frase  = '';
+    comida = '';
     //Creacion de nueva instancia de persona
     //El unico meto que retorna una isntancia y no undefined
     constructor ( nombre = 'Sin nombre', codigo = 'Sin Código', frase = 'Sin frase') {
@@ -19,6 +20,11 @@ class Persona {
         this.frase = frase;
 
     }
+
+    // Sets & Gets
+
+    s
+
 
     //METODOS
 
