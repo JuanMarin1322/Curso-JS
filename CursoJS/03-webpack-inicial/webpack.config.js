@@ -1,5 +1,6 @@
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+const HtmlWebPackPlugin    = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin           = require("copy-webpack-plugin");
 
 
 
@@ -33,7 +34,14 @@ module.exports = {
                 test: /styles.css$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
                 
-            }
+            },
+            {
+                test:/\.(png|jpe?g|gif)$/,
+                loader: 'file-loader',
+                   
+
+                },
+      
         ]
     },
 
@@ -53,7 +61,16 @@ module.exports = {
             filename :'[name].[fullhash].css',
             ignoreOrder: false
 
-        })
+        }),
+
+        new CopyPlugin({
+            patterns: [
+              { from: 'src/assets/', to: 'assets/'
+              
+              }
+             
+            ],
+          }),
 
     
     ],
