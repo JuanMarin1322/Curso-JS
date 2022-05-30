@@ -1,60 +1,30 @@
 //SINGLETON INSTANCIA unica de mi clase
 
+class Singleton{
 
-class Persona {
+    static instancia; //undefined
 
-    static _conteo = 0;
-    static get conteo(){
-
-        return Persona._conteo + ' instancias';
-    }
-
-    static mensaje (){
-
-        console.log( this.nombre); //undefined
-        console.log('Hola soy un metodo estatico');
-
-    }
-
+    //PROPIEDAD GLOBAL, (objetos propiedades)
     nombre = '';
-    codigo = '';
-    frase  = '';
-    comida = '';
 
-    constructor ( nombre = 'Sin nombre', codigo = 'Sin Código', frase = 'Sin frase') {
+    constructor( nombre = ''){
 
-        if ( !nombre ) throw Error('Se necesita el nombre');
+    
+
+      if ( !!Singleton.instancia ){
+
+        return Singleton.instancia;
+        }
+        Singleton.instancia= this;
         this.nombre = nombre;
-        this.codigo = `Personaje: ${codigo}`;
-        this.frase = frase;
 
-
-        Persona._conteo ++ ;
-    }
-
-    set setComidaFavorita ( comida ){
-
-        this.comida = comida.toUpperCase();
-
-    }
-
-    get getComidaFavorita (){
-
-        return `La comida favorita de ${ this.nombre} es ${ this.comida}`;
-    }
-
-    quienSoy(){
-
-        console.log(`Soy ${ this.nombre} y mi identidad es ${ this.codigo}`);
-
-    }
-
-
-    miFrase(){
-
-        this.quienSoy();
-        console.log(`${ this.codigo }  dice : ${ this.frase}`);
-
-        
     }
 }
+
+const instancia1 = new Singleton('Ironman');
+const instancia2 = new Singleton('Spiderman');
+const instancia3 = new Singleton('Black Panther');
+
+console.log(`Nombre en la instancia1 es: ${ instancia1.nombre }`);
+console.log(`Nombre en la instancia2 es: ${ instancia2.nombre }`);
+console.log(`Nombre en la instancia3 es: ${ instancia3.nombre }`);
