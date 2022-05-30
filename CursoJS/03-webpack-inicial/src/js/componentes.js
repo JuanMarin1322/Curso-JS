@@ -1,4 +1,6 @@
-const saludar = ( nombre)=>{
+
+//Palabra clave export para loq eu se necesita exportar 
+export const saludar = ( nombre)=>{
     console.log('Creando eriqueta h1')
 
     const h1 = document.createElement('h1');

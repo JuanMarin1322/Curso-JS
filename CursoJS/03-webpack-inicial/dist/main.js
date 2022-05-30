@@ -1,0 +1,1 @@
+(()=>{"use strict";(e=>{console.log("Creando eriqueta h1");const n=document.createElement("h1");n.innerText="Hola, Juan Camilo !!",document.body.append(n)})()})();
