@@ -72,7 +72,7 @@ module.exports = {
         new HtmlWebPackPlugin({
             title: 'My WebPack',
             filename:'index.html',
-            template:'../03-webpack-inicial/src/index.html'
+            template:'../04-webpack-inicial/src/index.html'
 
 
         }),
