@@ -10,7 +10,7 @@ export class TodoList {
 
         nuevoTodo( todo ){
 
-            this.todos.push( todo);
+            this.todos.push( todo );
         }
 
         eliminarTodo( id ){
@@ -21,7 +21,15 @@ export class TodoList {
 
         marcarCompletado ( id ) {
 
+            for(const todo of this.todos){
 
+            console.log(id, todo.id);
+                if (todo.id == id ){
+
+                    todo.completado = !todo.completado;
+                    break;
+                }
+            }
         }
 
         eliminarCompletados (){

@@ -1,8 +1,11 @@
+import { Todo } from '../../classes';
+import { todoList } from '../index.js';
 
+const divTodoList = document.querySelector('.todo-list');
+const txtInput    = document.querySelector('.new-todo');
 export const crearTodoHtml = ( todo ) => {
 
 
-    const divTodoList = document.querySelector('.todo-list');
 
 const htmlTodo =`<li class="${ (todo.completado )} ? 'completed'  : ''" data-id=" ${todo.id}">
 						<div class="view">
@@ -18,5 +21,46 @@ const htmlTodo =`<li class="${ (todo.completado )} ? 'completed'  : ''" data-id=
 
     divTodoList.append( div.firstElementChild);
 
-    return div;
+    return div.firstElementChild;
 }
+
+//Eventos
+txtInput.addEventListener('keyup', (event ) =>{
+
+	if( event.keyCode === 13 && txtInput.value.length > 0 ) {
+
+		const nuevoTodo = new Todo  (txtInput.value);
+	
+
+		todoList.nuevoTodo(nuevoTodo);
+
+		crearTodoHtml(nuevoTodo);
+		console.log(todoList);
+		txtInput.value= '';
+	}
+
+	
+});
+
+divTodoList.addEventListener('click', (event) => {
+
+
+	const nombreElemento = event.target.localName; //Input, label o button
+
+	const todoElemento = event.target.parentElement.parentElement;
+
+	const todoId = todoElemento.getAttribute('data-id');
+	
+
+	if ( nombreElemento.includes('input') ){
+
+		todoList.marcarCompletado(todoId);
+
+		todoElemento.classList.toggle('completed');
+
+	}
+
+
+	console.log(todoList);
+
+});
