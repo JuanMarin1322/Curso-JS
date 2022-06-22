@@ -6,6 +6,10 @@ import { crearTodoHtml } from './js/componentes.js';
 
 export const todoList = new TodoList();
 
+// todoList.todos.forEach(todo => crearTodoHtml(todo));
+todoList.todos.forEach( crearTodoHtml);
+
+
 // const tarea  = new Todo('Aprender Javascript');
 // const tarea2  = new Todo('Comprar un unicornio');
 
