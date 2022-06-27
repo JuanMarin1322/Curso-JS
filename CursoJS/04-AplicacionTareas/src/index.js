@@ -9,6 +9,8 @@ export const todoList = new TodoList();
 // todoList.todos.forEach(todo => crearTodoHtml(todo));
 todoList.todos.forEach( crearTodoHtml);
 
+console.log('Todos', todoList.todos);
+
 
 // const tarea  = new Todo('Aprender Javascript');
 // const tarea2  = new Todo('Comprar un unicornio');
