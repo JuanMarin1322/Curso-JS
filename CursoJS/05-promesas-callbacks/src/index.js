@@ -1,21 +1,33 @@
-// import { buscarHeroe } from './js/callbacks'; 
+// import { promesaLenta, promesaMedia, promesaRapida } from './js/promesas'
+// import { buscarHeroeAsync,buscarHeroe } from './js/promesas';
+import { obtenerHeroesArr, obtenerHeroeAwait } from './js/await';
 import './styles.css';
 
+console.time('await');
 
-console.log('Hola Mundo');
+
+// promesaLenta.then( console.log );
+// promesaMedia.then( console.log );
+// promesaRapida.then( console.log );
 
 
-const heroeId1 = 'capi';
-const heroeId2 = 'spider';
+// Promise.race( [promesaLenta, promesaMedia, promesaRapida ])
+// .then( console.log);
 
-// buscarHeroe( heroeId1, ( error, heroe ) => {
 
-//     // console.log('Callback llamado!');
-//     if ( error){return console.error( error );} 
-    
-  
-//         console.log(`Enviando a ${heroe.nombre} y ${heroe2.nombre} a la misión `);
-    
-//     });
+// buscarHeroe('capi')
+// .then( heroe => console.log( heroe) )
+// .catch( console.warn );
 
-// });
+// buscarHeroeAsync('iron2')
+// .then( heroe => console.log( heroe) )
+// .catch( console.warn );
+
+obtenerHeroeAwait('capi2').then( heroe => {
+    console.log( heroe);
+
+    console.timeEnd('await');
+
+}).catch(console.warn);
+
+ 
