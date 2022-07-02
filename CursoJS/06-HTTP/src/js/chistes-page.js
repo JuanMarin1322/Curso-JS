@@ -1,4 +1,5 @@
-import { obtenerChiste } from "./http-provider";
+import { obtenerChiste, obtenerUsuarios } from "./http-provider";
+
 
 const body = document.body;
 let btnOtro, olList;
